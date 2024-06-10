@@ -4,13 +4,13 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Github } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
@@ -51,59 +51,82 @@ function Login() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
-			<Card>
-				<CardHeader>
-					<CardTitle>Welcome Back 👋🏻</CardTitle>
-					<CardDescription>
-						Lorem ipsum, dolor sit amet consectetur.
-					</CardDescription>
-				</CardHeader>
-				<CardContent className="space-y-2">
-					{errors.root && (
-						<div className="text-red-500 text-sm">
-							{errors.root.message}
-						</div>
-					)}
+		<Card>
+			<CardHeader>
+				<CardTitle>Welcome Back 👋🏻</CardTitle>
+				<CardDescription>
+					Lorem ipsum, dolor sit amet consectetur.
+				</CardDescription>
+			</CardHeader>
+			<CardContent className="space-y-2">
+				<div className="flex gap-2">
+					<Button
+						variant="outline"
+						className="w-full flex gap-2"
+						onClick={() => {
+							authService.createAccountWithGoogle();
+						}}
+					>
+						<img
+							src="/social-icons/google.svg"
+							alt="google-icon"
+							width={18}
+						/>
+						Google
+					</Button>
+					<Button variant="outline" className="w-full flex gap-2">
+						<Github size={22} /> GitHub
+					</Button>
+				</div>
 
+				<div className="text-center">Or</div>
+
+				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="space-y-2">
-						<Label htmlFor="email">Email</Label>
-						<Input
-							{...register("email")}
-							id="email"
-							placeholder="text@email.com"
-						/>
-						{errors.email && (
+						{errors.root && (
 							<div className="text-red-500 text-sm">
-								{errors.email.message}
+								{errors.root.message}
 							</div>
 						)}
+
+						<div className="space-y-2">
+							<Label htmlFor="email">Email</Label>
+							<Input
+								{...register("email")}
+								id="email"
+								placeholder="text@email.com"
+							/>
+							{errors.email && (
+								<div className="text-red-500 text-sm">
+									{errors.email.message}
+								</div>
+							)}
+						</div>
+						<div className="space-y-2">
+							<Label htmlFor="password">Password</Label>
+							<Input
+								{...register("password")}
+								id="password"
+								placeholder="********"
+							/>
+							{errors.password && (
+								<div className="text-red-500 text-sm">
+									{errors.password.message}
+								</div>
+							)}
+						</div>
 					</div>
-					<div className="space-y-2">
-						<Label htmlFor="password">Password</Label>
-						<Input
-							{...register("password")}
-							id="password"
-							placeholder="********"
-						/>
-						{errors.password && (
-							<div className="text-red-500 text-sm">
-								{errors.password.message}
-							</div>
-						)}
-					</div>
-				</CardContent>
-				<CardFooter>
+
 					<Button
 						disabled={isSubmitting}
 						type="submit"
-						className="w-full"
+						className="w-full mt-6"
 					>
 						Login
 					</Button>
-				</CardFooter>
-			</Card>
-		</form>
+				</form>
+			</CardContent>
+		</Card>
 	);
 }
 

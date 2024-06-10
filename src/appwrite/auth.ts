@@ -1,5 +1,5 @@
 import conf from "@/conf/conf";
-import { Client, Account, ID } from "appwrite";
+import { Client, Account, ID, OAuthProvider } from "appwrite";
 
 type UserAccount = {
 	email: string;
@@ -33,6 +33,18 @@ export class AuthService {
 			} else {
 				return userAccount;
 			}
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	async createAccountWithGoogle() {
+		try {
+			await this.account.createOAuth2Session(
+				OAuthProvider.Google,
+				"http://localhost:5173",
+				"http://localhost:5173/fail"
+			);
 		} catch (error) {
 			throw error;
 		}
