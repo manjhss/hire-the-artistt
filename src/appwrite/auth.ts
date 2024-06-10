@@ -4,6 +4,7 @@ import { Client, Account, ID } from "appwrite";
 type UserAccount = {
 	email: string;
 	password: string;
+	name?: string;
 };
 
 export class AuthService {
@@ -18,12 +19,13 @@ export class AuthService {
 		this.account = new Account(this.client);
 	}
 
-	async createAccount({ email, password }: UserAccount) {
+	async createAccount({ email, password, name }: UserAccount) {
 		try {
 			const userAccount = await this.account.create(
 				ID.unique(),
 				email,
-				password
+				password,
+				name
 			);
 
 			if (userAccount) {
