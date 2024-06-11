@@ -58,7 +58,7 @@ function Login() {
 						variant="outline"
 						className="w-full flex gap-2"
 						onClick={() => {
-							authService.createAccountWithGoogle();
+							authService.LoginWithGoogle();
 						}}
 					>
 						<img
@@ -68,7 +68,13 @@ function Login() {
 						/>
 						Google
 					</Button>
-					<Button variant="outline" className="w-full flex gap-2">
+					<Button
+						variant="outline"
+						className="w-full flex gap-2"
+						onClick={() => {
+							authService.LogintWithGitHub();
+						}}
+					>
 						<Github size={22} /> GitHub
 					</Button>
 				</div>
@@ -100,6 +106,7 @@ function Login() {
 							<Label htmlFor="password">Password</Label>
 							<Input
 								{...register("password")}
+								type="password"
 								id="password"
 								placeholder="********"
 							/>

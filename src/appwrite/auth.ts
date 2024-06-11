@@ -38,10 +38,22 @@ export class AuthService {
 		}
 	}
 
-	async createAccountWithGoogle() {
+	async LoginWithGoogle() {
 		try {
 			await this.account.createOAuth2Session(
 				OAuthProvider.Google,
+				"http://localhost:5173",
+				"http://localhost:5173/fail"
+			);
+		} catch (error) {
+			throw error;
+		}
+	}
+	
+	async LogintWithGitHub() {
+		try {
+			await this.account.createOAuth2Session(
+				OAuthProvider.Github,
 				"http://localhost:5173",
 				"http://localhost:5173/fail"
 			);
@@ -64,6 +76,14 @@ export class AuthService {
 	async getCurrentUser() {
 		try {
 			return await this.account.get();
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	async getSession() {
+		try {
+			return await this.account.getSession("current");
 		} catch (error) {
 			throw error;
 		}

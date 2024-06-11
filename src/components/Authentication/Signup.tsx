@@ -99,6 +99,7 @@ function Signup() {
 							<Label htmlFor="password">Password</Label>
 							<Input
 								{...register("password")}
+								type="password"
 								id="password"
 								placeholder="********"
 							/>
@@ -112,6 +113,7 @@ function Signup() {
 							<Label htmlFor="confirm">Confirm Password</Label>
 							<Input
 								{...register("confirm")}
+								type="password"
 								id="confirm"
 								placeholder="********"
 							/>
