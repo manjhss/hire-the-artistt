@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
+import { login } from "@/store/authSlice";
 
 const signUpSchema = z
 	.object({
@@ -28,6 +30,7 @@ type FormFields = z.infer<typeof signUpSchema>;
 
 function Signup() {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	const {
 		register,
@@ -42,7 +45,7 @@ function Signup() {
 
 			if (userData) {
 				const userData = await authService.getCurrentUser();
-				console.log(userData);
+				if (userData) dispatch(login(userData));
 				navigate("/");
 			}
 		} catch (error: any) {

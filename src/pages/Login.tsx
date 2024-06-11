@@ -1,4 +1,4 @@
-import AuthTabBar from "@/components/Auth/AuthTabBar";
+import AuthTabBar from "@/components/Authentication/AuthTabBar";
 
 function Login() {
 	return (

@@ -6,8 +6,10 @@ import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Github } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
+import { login } from "@/store/authSlice";
 
 const loginSchema = z.object({
 	email: z.string().email({ message: "Invalid email address" }),
@@ -20,6 +22,7 @@ type FormFields = z.infer<typeof loginSchema>;
 
 function Login() {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	const {
 		register,
@@ -34,7 +37,7 @@ function Login() {
 
 			if (session) {
 				const userData = await authService.getCurrentUser();
-				console.log(userData);
+				if (userData) dispatch(login(userData));
 				navigate("/");
 			}
 		} catch (error: any) {
