@@ -37,7 +37,12 @@ function Login() {
 
 			if (session) {
 				const userData = await authService.getCurrentUser();
-				if (userData) dispatch(login(userData));
+
+				if (userData) {
+					const { $id, name, email } = userData;
+					dispatch(login({ $id, name, email }));
+				}
+
 				navigate("/");
 			}
 		} catch (error: any) {

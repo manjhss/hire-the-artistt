@@ -1,3 +1,4 @@
 import Protected from "./Protected";
+import Header from "./Header";
 
-export { Protected };
+export { Protected, Header };
