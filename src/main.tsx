@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/store.ts";
+import { ThemeProvider } from "@/components/theme-provider";
 import App from "./App";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
@@ -28,8 +30,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-			<RouterProvider router={router} />
-		</ThemeProvider>
+		<Provider store={store}>
+			<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		</Provider>
 	</React.StrictMode>
 );

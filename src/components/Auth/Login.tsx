@@ -1,12 +1,6 @@
 import authService from "@/appwrite/auth";
 import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -53,10 +47,7 @@ function Login() {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>Welcome Back 👋🏻</CardTitle>
-				<CardDescription>
-					Lorem ipsum, dolor sit amet consectetur.
-				</CardDescription>
+				<CardTitle>Welcome Back</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-2">
 				<div className="flex gap-2">
