@@ -72,7 +72,7 @@ function Services() {
 						>
 							<div className="p-1 cursor-pointer">
 								<Link to={item.path}>
-									<Card>
+									<Card className="hover:bg-muted transition-all duration-200 ease-linear">
 										<div className="aspect-square flex gap-4 flex-col justify-center items-center">
 											<div>{item.icon}</div>
 											<div className="font-medium">

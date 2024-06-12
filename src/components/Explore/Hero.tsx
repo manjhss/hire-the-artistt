@@ -7,10 +7,13 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Title } from "../index";
 
 function Hero() {
 	return (
-		<section>
+		<section className="space-y-8">
+			<Title>#SpecialForYou</Title>
+
 			<Carousel
 				plugins={[
 					Autoplay({

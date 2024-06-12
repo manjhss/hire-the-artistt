@@ -71,7 +71,7 @@ function RecommArtists() {
 										<img src={item.img} alt="" />
 									</div>
 								</Card>
-								<div className="px-4 py-1 text-lg font-medium">
+								<div className="px-4 py-1 lg:text-lg font-medium">
 									@{item.name}
 								</div>
 							</Link>
