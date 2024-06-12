@@ -40,7 +40,7 @@ export class AuthService {
 
 	async LoginWithGoogle() {
 		try {
-			await this.account.createOAuth2Session(
+			this.account.createOAuth2Session(
 				OAuthProvider.Google,
 				"http://localhost:5173",
 				"http://localhost:5173/fail"
@@ -49,10 +49,10 @@ export class AuthService {
 			throw error;
 		}
 	}
-	
+
 	async LogintWithGitHub() {
 		try {
-			await this.account.createOAuth2Session(
+			this.account.createOAuth2Session(
 				OAuthProvider.Github,
 				"http://localhost:5173",
 				"http://localhost:5173/fail"

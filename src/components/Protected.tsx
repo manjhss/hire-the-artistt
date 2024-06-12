@@ -19,7 +19,7 @@ function Protected({
 		if (authentication && status !== authentication) {
 			navigate("/login");
 		} else if (!authentication && status !== authentication) {
-			navigate("/");
+			navigate("/explore");
 		}
 
 		setLoader(false);

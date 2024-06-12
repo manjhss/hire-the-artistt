@@ -1,4 +1,4 @@
-import { Gem, Home } from "lucide-react";
+import { CircleGauge, Home } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -27,16 +27,16 @@ function Header() {
 			path: "/",
 		},
 		{
-			name: "Pricing",
-			element: <Gem />,
-			path: "/pricing",
+			name: "Explore",
+			element: <CircleGauge />,
+			path: "/explore",
 		},
 	];
 
 	return (
 		<header className="border-b">
-			<nav className="w-[70%] mx-auto py-4 flex justify-between items-center gap-8">
-				<div>
+			<nav className="w-[70%] mx-auto py-4 flex flex-wrap justify-between items-center gap-x-8 gap-y-4">
+				<div className="flex gap-2">
 					<Input className="w-96" placeholder="Search..." />
 				</div>
 
@@ -67,7 +67,7 @@ function Header() {
 								</DropdownMenuLabel>
 								<DropdownMenuSeparator />
 
-								<Link to="/profile">
+								<Link to={`/profile/${userData.$id}`}>
 									<DropdownMenuItem>Profile</DropdownMenuItem>
 								</Link>
 

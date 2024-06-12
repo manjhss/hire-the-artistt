@@ -9,6 +9,8 @@ import App from "./App";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
+import Explore from "./pages/Explore";
+import Profile from "./pages/Profile";
 
 import { Protected } from "@/components/index.ts";
 
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
 						<Login />
 					</Protected>
 				),
+			},
+			{
+				path: "/explore",
+				element: <Explore />,
+			},
+			{
+				path: "/profile/:id",
+				element: <Profile />,
 			},
 		],
 	},
