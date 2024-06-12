@@ -56,7 +56,7 @@ function Services() {
 
 	return (
 		<section className="space-y-8">
-			<Title>Popular Services</Title>
+			<Title>Services</Title>
 
 			<Carousel
 				opts={{

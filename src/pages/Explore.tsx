@@ -1,4 +1,4 @@
-import { Trending, Hero, Services } from "@/components/index";
+import { Trending, Hero, Services, RecommArtists } from "@/components/index";
 
 function Explore() {
 	return (
@@ -6,6 +6,7 @@ function Explore() {
 			<Trending />
 			<Hero />
 			<Services />
+			<RecommArtists/>
 		</div>
 	);
 }
