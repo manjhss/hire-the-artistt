@@ -1,13 +1,6 @@
 import { Title } from "../index";
-import { Card } from "@/components/ui/card";
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
+import ArtistCard from "../ArtistCard";
 
 function RecommArtists() {
 	const artistLists = [
@@ -53,34 +46,16 @@ function RecommArtists() {
 		<section className="space-y-8">
 			<Title>Artists</Title>
 
-			<Carousel
-				opts={{
-					align: "start",
-				}}
-				className="w-full"
-			>
-				<CarouselContent>
-					{artistLists.map((item, index) => (
-						<CarouselItem
-							key={index}
-							className="md:basis-1/4 lg:basis-1/5"
-						>
-							<Link to={`/profile/${item.id}`}>
-								<Card className="overflow-hidden">
-									<div className="aspect-square">
-										<img src={item.img} alt="" />
-									</div>
-								</Card>
-								<div className="px-4 py-1 lg:text-lg font-medium">
-									@{item.name}
-								</div>
-							</Link>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-				<CarouselPrevious />
-				<CarouselNext />
-			</Carousel>
+			<div className="grid grid-cols-4 gap-2 md:grid-cols-5 lg:gap-4">
+				{Array.from({ length: 7 }).map((_, index) => (
+					<Link key={index} to={`/profile/${artistLists[index]?.id}`}>
+						<ArtistCard
+							img={artistLists[index].img}
+							name={artistLists[index].name}
+						/>
+					</Link>
+				))}
+			</div>
 		</section>
 	);
 }

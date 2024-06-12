@@ -6,7 +6,7 @@ function App() {
 		<div className="w-full h-screen">
 			<Header />
 
-			<div className="w-[70%] h-full mx-auto">
+			<div className="lg:w-[70%] xl:w-[1066px] px-4 h-full mx-auto">
 				<Outlet />
 			</div>
 		</div>

@@ -39,8 +39,11 @@ function Hero() {
 						</CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious />
-				<CarouselNext />
+				
+				<div className="hidden lg:block">
+					<CarouselPrevious />
+					<CarouselNext />
+				</div>
 			</Carousel>
 		</section>
 	);

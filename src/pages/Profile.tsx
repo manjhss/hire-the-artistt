@@ -5,7 +5,7 @@ function Profile() {
 
 	return (
 		<div className="h-full flex gap-4 justify-center items-center">
-			<h1 className="text-3xl font-bold">Profile {id}</h1>
+			<h1 className="text-3xl font-bold">@{id}</h1>
 		</div>
 	);
 }

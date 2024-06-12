@@ -1,14 +1,7 @@
-import { Title } from "../index";
-import { Card } from "@/components/ui/card";
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Brush, Clapperboard, Music, Video } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Title } from "../index";
+import { Brush, Clapperboard, Music, Video } from "lucide-react";
+import ServiceCard from "../ServiceCard";
 
 function Services() {
 	const serviceItems = [
@@ -28,7 +21,7 @@ function Services() {
 			icon: <Clapperboard size={32} />,
 		},
 		{
-			name: "Video Editing",
+			name: "Editing",
 			path: "/explore",
 			icon: <Video size={32} />,
 		},
@@ -48,7 +41,7 @@ function Services() {
 			icon: <Clapperboard size={32} />,
 		},
 		{
-			name: "Video Editing",
+			name: "Editing",
 			path: "/explore",
 			icon: <Video size={32} />,
 		},
@@ -58,36 +51,16 @@ function Services() {
 		<section className="space-y-8">
 			<Title>Services</Title>
 
-			<Carousel
-				opts={{
-					align: "start",
-				}}
-				className="w-full"
-			>
-				<CarouselContent>
-					{serviceItems.map((item, index) => (
-						<CarouselItem
-							key={index}
-							className="md:basis-1/4 lg:basis-1/6"
-						>
-							<div className="p-1 cursor-pointer">
-								<Link to={item.path}>
-									<Card className="hover:bg-muted transition-all duration-200 ease-linear">
-										<div className="aspect-square flex gap-4 flex-col justify-center items-center">
-											<div>{item.icon}</div>
-											<div className="font-medium">
-												{item.name}
-											</div>
-										</div>
-									</Card>
-								</Link>
-							</div>
-						</CarouselItem>
-					))}
-				</CarouselContent>
-				<CarouselPrevious />
-				<CarouselNext />
-			</Carousel>
+			<div className="grid grid-cols-5 gap-2 md:grid-cols-6 lg:gap-4">
+				{Array.from({ length: 8 }).map((_, index) => (
+					<Link key={index} to={serviceItems[index].path}>
+						<ServiceCard
+							icon={serviceItems[index].icon}
+							name={serviceItems[index].name}
+						/>
+					</Link>
+				))}
+			</div>
 		</section>
 	);
 }

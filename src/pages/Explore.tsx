@@ -1,12 +1,19 @@
-import { Trending, Hero, Services, RecommArtists } from "@/components/index";
+import {
+	Trending,
+	Hero,
+	Services,
+	RecommArtists,
+	Gigs,
+} from "@/components/index";
 
 function Explore() {
 	return (
-		<div className="space-y-12 pb-12">
+		<div className="space-y-8 md:space-y-12 pb-12">
 			<Trending />
 			<Hero />
 			<Services />
-			<RecommArtists/>
+			<RecommArtists />
+			<Gigs />
 		</div>
 	);
 }
