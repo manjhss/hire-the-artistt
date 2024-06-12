@@ -12,7 +12,7 @@ function Gigs() {
 					<Link key={index} to={`/gigs/i-record-a-song`}>
 						<GigCard
 							img="https://www.rollingstone.com/wp-content/uploads/2023/08/guitar200-Christone-Kingfish-Ingram-GettyImages-1097122460.jpg?w=800"
-							title="I will record a professional metal, rock or blues song"
+							title="I will record a professional song"
 							price="6,969"
 						/>
 					</Link>

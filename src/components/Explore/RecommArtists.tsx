@@ -46,7 +46,7 @@ function RecommArtists() {
 		<section className="space-y-8">
 			<Title>Artists</Title>
 
-			<div className="grid grid-cols-4 gap-2 md:grid-cols-5 lg:gap-4">
+			<div className="grid grid-cols-3 gap-2 md:grid-cols-5 lg:gap-4">
 				{Array.from({ length: 7 }).map((_, index) => (
 					<Link key={index} to={`/profile/${artistLists[index]?.id}`}>
 						<ArtistCard

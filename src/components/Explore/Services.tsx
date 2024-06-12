@@ -51,7 +51,7 @@ function Services() {
 		<section className="space-y-8">
 			<Title>Services</Title>
 
-			<div className="grid grid-cols-5 gap-2 md:grid-cols-6 lg:gap-4">
+			<div className="grid grid-cols-4 gap-2 md:grid-cols-6 lg:gap-4">
 				{Array.from({ length: 8 }).map((_, index) => (
 					<Link key={index} to={serviceItems[index].path}>
 						<ServiceCard
