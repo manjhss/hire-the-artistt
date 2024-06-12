@@ -6,17 +6,25 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 function Hero() {
 	return (
 		<section>
-			<Carousel className="w-full">
+			<Carousel
+				plugins={[
+					Autoplay({
+						delay: 4000,
+					}),
+				]}
+				className="w-full"
+			>
 				<CarouselContent>
 					{Array.from({ length: 3 }).map((_, index) => (
 						<CarouselItem key={index}>
 							<div className="p-1">
 								<Card className="overflow-hidden">
-									<div className="max-h-[420px]">
+									<div className="max-h-[440px]">
 										<img
 											src="https://media.istockphoto.com/id/490506050/photo/living-painting-young-woman-completely-covered-with-thick-paint.webp?b=1&s=170667a&w=0&k=20&c=oUfi7SWlTRxTAwMtH2GDgZR4P7k21fhOFvpTp_RXqto="
 											alt="cover-img"

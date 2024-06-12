@@ -3,15 +3,15 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 type AuthState = {
 	status: boolean;
 	userData: {
-		$id?: string,
-		name?: string,
-		email?: string
-	};
+		$id?: string;
+		name?: string;
+		email?: string;
+	} | null;
 };
 
 const initialState: AuthState = {
 	status: false,
-	userData: {},
+	userData: null,
 };
 
 const authSlice = createSlice({
@@ -24,7 +24,7 @@ const authSlice = createSlice({
 		},
 		logout: (state) => {
 			state.status = false;
-			state.userData = {};
+			state.userData = null;
 		},
 	},
 });

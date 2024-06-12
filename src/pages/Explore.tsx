@@ -1,10 +1,11 @@
-import { Trending, Hero } from "@/components/index";
+import { Trending, Hero, Services } from "@/components/index";
 
 function Explore() {
 	return (
-		<div className="space-y-10">
+		<div className="space-y-12 pb-12">
 			<Trending />
 			<Hero />
+			<Services />
 		</div>
 	);
 }

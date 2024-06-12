@@ -63,11 +63,11 @@ function Header() {
 							</DropdownMenuTrigger>
 							<DropdownMenuContent className="w-56">
 								<DropdownMenuLabel>
-									{userData.email}
+									{userData ? userData.email : "My account"}
 								</DropdownMenuLabel>
 								<DropdownMenuSeparator />
 
-								<Link to={`/profile/${userData.$id}`}>
+								<Link to={`/profile/${userData?.$id}`}>
 									<DropdownMenuItem>Profile</DropdownMenuItem>
 								</Link>
 
