@@ -68,11 +68,19 @@ function Header() {
 								<DropdownMenuLabel>
 									{userData ? userData.email : "My account"}
 								</DropdownMenuLabel>
+
 								<DropdownMenuSeparator />
 
 								<Link to={`/profile/${userData?.$id}`}>
 									<DropdownMenuItem>Profile</DropdownMenuItem>
 								</Link>
+								<Link to="/create-gig">
+									<DropdownMenuItem>
+										Create a Gig
+									</DropdownMenuItem>
+								</Link>
+
+								<DropdownMenuSeparator />
 
 								<DropdownMenuItem
 									onClick={() => {

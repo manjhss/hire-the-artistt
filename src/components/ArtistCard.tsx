@@ -11,7 +11,7 @@ function ArtistCard({ img, name }: Artist) {
 				</div>
 			</Card>
 
-			<div className="md:px-4 py-1 inline-block lg:text-lg md:font-medium hover:underline">
+			<div className="md:px-4 py-1 inline-block lg:text-lg font-medium hover:underline">
 				@{name}
 			</div>
 		</>

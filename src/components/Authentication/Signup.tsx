@@ -12,7 +12,12 @@ import { login } from "@/store/authSlice";
 
 const signUpSchema = z
 	.object({
-		name: z.string().min(4, "Name must be 4 or more characters long"),
+		name: z
+			.string()
+			.regex(
+				/^[a-z0-9_]{3,20}$/,
+				"Username should be atleast 3 character(s) long"
+			),
 		email: z.string().email({ message: "Invalid email address" }),
 		password: z
 			.string()
@@ -75,11 +80,11 @@ function Signup() {
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="space-y-2">
 						<div className="space-y-2">
-							<Label htmlFor="name">Full Name</Label>
+							<Label htmlFor="name">Username</Label>
 							<Input
 								{...register("name")}
 								id="name"
-								placeholder="e.g Surendra Manjhi"
+								placeholder="e.g. manjhss"
 							/>
 							{errors.name && (
 								<div className="text-red-500 text-sm">

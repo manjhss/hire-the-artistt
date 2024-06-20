@@ -15,9 +15,9 @@ function GigCard({ img, title, price }: Gigs) {
 				</div>
 			</Card>
 
-			<div className="mt-2 md:px-4">
-				<div className="py-1 lg:text-lg">{title}</div>
-				<div className="py-1 lg:text-lg font-medium">
+			<div className="mt-2 md:px-4 space-y-1">
+				<div className="lg:text-lg">{title}</div>
+				<div className="lg:text-lg font-medium">
 					₹ {price}
 				</div>
 			</div>

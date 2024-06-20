@@ -2,7 +2,7 @@ import { AuthTabBar } from "@/components/index";
 
 function Login() {
 	return (
-		<div className="h-full flex items-center justify-center">
+		<div className="h-screen flex items-center justify-center">
 			<AuthTabBar />
 		</div>
 	);

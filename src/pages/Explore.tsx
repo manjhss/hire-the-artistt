@@ -8,7 +8,7 @@ import {
 
 function Explore() {
 	return (
-		<div className="space-y-8 md:space-y-12 pb-12">
+		<div className="space-y-8 md:space-y-12">
 			<Trending />
 			<Hero />
 			<Services />
