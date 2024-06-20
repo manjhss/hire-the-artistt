@@ -23,6 +23,7 @@ function PostForm({ post }: any) {
 			title: post?.title || "",
 			slug: post?.$id || "",
 			description: post?.description || "",
+			image: post?.featuredImage,
 		},
 	});
 

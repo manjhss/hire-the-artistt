@@ -15,6 +15,7 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ModeToggle } from "./mode-toggle";
 
 function Header() {
 	const { status, userData } = useSelector((state: RootState) => state.auth);
@@ -36,7 +37,8 @@ function Header() {
 	return (
 		<header className="border-b px-4">
 			<nav className="lg:w-[70%] xl:w-[1066px] mx-auto py-4 flex flex-wrap justify-between items-center gap-x-8 gap-y-4">
-				<div>
+				<div className="flex gap-2 flex-wrap">
+					<ModeToggle/>
 					<Input
 						className="sm:w-96 font-medium"
 						placeholder="Search..."
